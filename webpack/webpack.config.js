@@ -6,7 +6,7 @@ module.exports = [
   {
     mode: "development",
     entry: "./app/mainApp.jsx",
-    target: "electron11-main",
+    target: "electron-main",
     devtool: "source-map",
     module: {
       rules: [
