@@ -1,7 +1,7 @@
 {
   "name": "graphiql-app",
   "productName": "GraphiQL",
-  "version": "0.8.0-alpha",
+  "version": "0.8.0",
   "description": "A light, Electron-based wrapper around GraphiQL.",
   "main": "main.js",
   "scripts": {
@@ -16,20 +16,21 @@
     "dist-clean": "rm -rf ./dist ./release",
     "dist": "electron-builder build -mwl",
     "dist-linux": "electron-builder build -l",
-    "release": "yarn dist-clean && yarn build && build -mwl",
+    "release": "yarn dist-clean && yarn build && electron-builder build -mwl",
     "test": "npm run build",
     "postinstall": "electron-builder install-app-deps"
   },
   "browserslist": "> 0.25%, not dead",
   "author": "Adam Miskiewicz <adam.skevy@mac.com> (http://github.com/skevy)",
+  "maintainers": ["Jacob Buchanan <jbuchanan21@qub.ac.uk> (http://github.com/jhbuchanan45)"],
   "license": "MIT",
-  "homepage": "https://github.com/skevy/graphiql-app",
+  "homepage": "https://github.com/jhbuchanan45/graphiql-app",
   "bugs": {
-    "url": "https://github.com/skevy/graphiql-app/issues"
+    "url": "https://github.com/jhbuchanan45/graphiql-app/issues"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/skevy/graphiql-app.git"
+    "url": "http://github.com/jhbuchanan45/graphiql-app.git"
   },
   "dependencies": {
     "@babel/core": "^7.14.3",
@@ -55,7 +56,7 @@
     "chai-as-promised": "^7.1.1",
     "css-loader": "^5.2.6",
     "del": "^6.0.0",
-    "electron": "^13.0.1",
+    "electron": "^11.0.0",
     "electron-builder": "^22.10.5",
     "electron-packager": "^15.2.0",
     "eslint-plugin-react": "^7.23.2",
@@ -85,7 +86,7 @@
     "publish": [
       {
         "provider": "github",
-        "owner": "skevy",
+        "owner": "jhbuchanan45",
         "repo": "graphiql-app"
       }
     ],
