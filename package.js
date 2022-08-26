@@ -4,7 +4,7 @@ var webpack = require('webpack');
 var cfg = require('./webpack/webpack.config.production.js');
 var packager = require('electron-packager');
 var assign = require('object-assign');
-var del = require('del');
+var { deleteAsync } = require('del');
 var latest = require('github-latest-release');
 var argv = require('minimist')(process.argv.slice(2));
 var devDeps = Object.keys(require('./package.json').devDependencies);
@@ -55,7 +55,7 @@ function startPack() {
   console.log('start pack...');
   webpack(cfg, function runWebpackBuild(err, stats) {
     if (err) return console.error(err);
-    del('release')
+    deleteAsync('release')
     .then(function(paths) {
       if (shouldBuildAll) {
         // build for all platforms

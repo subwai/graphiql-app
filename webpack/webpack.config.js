@@ -44,5 +44,21 @@ module.exports = [
       libraryTarget: "commonjs2",
       publicPath: "/dist/",
     },
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10,
+            reuseExistingChunk: true,
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true,
+          },
+        },
+      }
+    },
   },
 ];

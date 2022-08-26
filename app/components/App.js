@@ -381,7 +381,6 @@ export default class App extends React.Component {
               />
 
               <a
-                href="javascript:;"
                 className="pure-button pure-button-primary edit-headers-button"
                 onClick={this.openHeaderEdit}
               >
@@ -404,11 +403,7 @@ export default class App extends React.Component {
           </div>
         </form>
         <div className="graphiql-wrapper">
-          {
-            // THIS IS THE GROSSEST THING I'VE EVER DONE AND I HATE IT. FIXME ASAP
-          }
           <GraphiQL
-            ref={(graphiql) => (this.graphiql = graphiql)}
             key={
               currentTabIndex +
               currentTab.endpoint +
@@ -434,7 +429,6 @@ export default class App extends React.Component {
                   }
                 >
                   <a
-                    href="javascript:;"
                     onClick={this.handleTabClick.bind(this, tabIndex)}
                     onDoubleClick={this.handleTabDoubleClick.bind(
                       this,
