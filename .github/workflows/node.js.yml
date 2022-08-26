@@ -20,13 +20,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
+
     - name: Install Node.js, NPM and Yarn
       uses: actions/setup-node@v1
       with:
         node-version: 14
+
     - name: Install deps
       if: ${{ matrix.os == 'ubuntu-latest' }}
       run: sudo apt-get install --no-install-recommends -y libarchive-tools
+
     - name: Electron Builder Action
   # You may pin to the exact commit or the version.
   # uses: samuelmeuli/action-electron-builder@92327c67bc45ff7c38bf55d8aa8c4d75b7ea38e7
